@@ -1,5 +1,5 @@
-#ifndef GPIO_INIT_H
-#define GPIO_INIT_H
+#ifndef __GPIO_INIT_H__
+#define __GPIO_INIT_H__
 
 /********************************************************************************
  * Includes from external Librarys

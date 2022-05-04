@@ -1,5 +1,5 @@
-#ifndef APP_H
-#define APP_H
+#ifndef __APP_H__
+#define __APP_H__
 
 /********************************************************************************
  * Includes from external Librarys

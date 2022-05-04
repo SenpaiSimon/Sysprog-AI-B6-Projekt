@@ -1,5 +1,5 @@
-#ifndef GPIO_PINS
-#define GPIO_PINS
+#ifndef __GPIO_PINS__
+#define __GPIO_PINS__
 
 /********************************************************************************
  * How many Rows and lines are in the Chart

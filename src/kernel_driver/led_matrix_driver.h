@@ -1,5 +1,5 @@
-#ifndef LED_MATRIX_DRIVERs
-#define LED_MATRIX_DRIVER
+#ifndef __LED_MATRIX_DRIVER__
+#define __LED_MATRIX_DRIVER__
 
 /********************************************************************************
  * Includes from external Librarys

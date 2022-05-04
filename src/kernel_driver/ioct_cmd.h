@@ -1,5 +1,5 @@
-#ifndef IOCT_CMD
-#define IOCT_CMD
+#ifndef __IOCT_CMD__
+#define __IOCT_CMD__
 
 /********************************************************************************
  * IOCT Commands
