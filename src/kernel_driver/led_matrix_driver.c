@@ -1,13 +1,20 @@
 #include "led_matrix_driver.h"
 
-static int dev_uevent(struct device *dev, struct kobj_uevent_env *env)
-{
+static const struct file_operations fops = {
+	.owner = THIS_MODULE,
+	.open = dev_open,
+	.release = dev_release,
+	.unlocked_ioctl = dev_ioctl,
+	.read = dev_read,
+	.write = dev_write
+};
+
+static int dev_uevent(struct device *dev, struct kobj_uevent_env *env) {
 	add_uevent_var(env, "DEVMODE=%#o", 0666);
 	return 0;
 }
 
-static int __init dev_init(void)
-{
+static int __init dev_init(void) {
     // Init of the device itself
 	int err;
 	dev_t dev;
@@ -21,23 +28,15 @@ static int __init dev_init(void)
 	device_create(dev_class, NULL, MKDEV(dev_major, 0), NULL, DEVICE_NAME);
 	printk(KERN_INFO "Hello from %s\n", __func__);
 
-    // TODO
-	// Initialisation of all the GPIOs
-	gpio_is_valid(GPIO_4);
-	gpio_request(GPIO_4, "GPIO_4");
-	gpio_direction_output(GPIO_4, 0);
-	/* visible in /sys/class/gpio/ */
-	gpio_export(GPIO_4, false);
-
+	// init all the needed gpios
+    init_all_gpios();
 	return 0;
 }
 
 static void __exit dev_exit(void)
 {
     // free up all the GPIOS 
-    //TODO
-	gpio_unexport(GPIO_4);
-	gpio_free(GPIO_4);
+    exit_all_gpios();
 
     // Remove the device
 	device_destroy(dev_class, MKDEV(dev_major, 0));
@@ -68,7 +67,7 @@ static ssize_t dev_read(struct file *file, char __user *buf, size_t count, loff_
 	printk(KERN_INFO "Device read\n");
 
     // actual output to user
-	gpio_value = gpio_get_value(GPIO_4);
+	gpio_value = gpio_get_value(H_GPIO_1);
 	len = snprintf(buffer, sizeof(buffer), "GPIO_4: %d\n", gpio_value);
 	if(copy_to_user(buf, buffer, len) > 0) 
 		pr_err("dev_read(): ERROR\n");
@@ -99,15 +98,15 @@ static long dev_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 	printk("Device ioctl\n");
 	switch(cmd) {
 		case CMD_1: {
-			gpio_set_value(GPIO_4, arg);
+			gpio_set_value(H_GPIO_1, arg);
 			break;
 		}
 		case CMD_2: {
-			gpio_set_value(GPIO_4, 1);
+			gpio_set_value(H_GPIO_1, 1);
 			break;
 		}
 		case CMD_3: {
-			gpio_set_value(GPIO_4, 0);
+			gpio_set_value(H_GPIO_1, 0);
 			break;
 		}
 		default:
