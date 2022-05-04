@@ -1,5 +1,10 @@
 #include "led_matrix_driver.h"
 
+static int dev_major = 0;
+
+/********************************************************************************
+ * Struct for all the available file operations
+ ********************************************************************************/
 static const struct file_operations fops = {
 	.owner = THIS_MODULE,
 	.open = dev_open,
@@ -9,13 +14,19 @@ static const struct file_operations fops = {
 	.write = dev_write
 };
 
+/********************************************************************************
+ * Add an event to the device
+ ********************************************************************************/
 static int dev_uevent(struct device *dev, struct kobj_uevent_env *env) {
 	add_uevent_var(env, "DEVMODE=%#o", 0666);
 	return 0;
 }
 
+/********************************************************************************
+ * Initialize the device
+ ********************************************************************************/
 static int __init dev_init(void) {
-    // Init of the device itself
+	// Initialize the device itself
 	int err;
 	dev_t dev;
 	err = alloc_chrdev_region(&dev, 0, 1, DEVICE_NAME);
@@ -26,45 +37,55 @@ static int __init dev_init(void) {
 	cdev.owner = THIS_MODULE;
 	cdev_add(&cdev, MKDEV(dev_major, 0), 1);
 	device_create(dev_class, NULL, MKDEV(dev_major, 0), NULL, DEVICE_NAME);
-	printk(KERN_INFO "Hello from %s\n", __func__);
+	printk(KERN_INFO "Init GPIO Led Matrix Driver\r\n");
 
-	// init all the needed gpios
     init_all_gpios();
 	return 0;
 }
 
+/********************************************************************************
+ * Unregister the device
+ ********************************************************************************/
 static void __exit dev_exit(void)
 {
-    // free up all the GPIOS 
     exit_all_gpios();
 
-    // Remove the device
+	// Remove and unregister the device
 	device_destroy(dev_class, MKDEV(dev_major, 0));
 	class_unregister(dev_class);
 	class_destroy(dev_class);
 	unregister_chrdev_region(MKDEV(dev_major, 0), MINORMASK);
-	printk(KERN_INFO "Good Bye from %s\n", __func__);
+	printk(KERN_INFO "Unregister GPIO Led Matrix Driver\r\n");
 	return;
 }
 
+/********************************************************************************
+ * Open the device from User App
+ ********************************************************************************/
 static int dev_open(struct inode *inode, struct file *file)
 {
-	printk(KERN_INFO "Device open\n");
+	printk(KERN_INFO "GPIO LED Driver started access\n");
 	return 0;
 }
 
+/********************************************************************************
+ * Close the device from User App
+ ********************************************************************************/
 static int dev_release(struct inode *inode, struct file *file)
 {
-	printk(KERN_INFO "Device close\n");
+	printk(KERN_INFO "GPIO LED Driver stopped access\n");
 	return 0;
 }
 
+/********************************************************************************
+ * Read the device from CMD
+ ********************************************************************************/
 static ssize_t dev_read(struct file *file, char __user *buf, size_t count, loff_t *offset)
 {
 	int len;
 	char buffer[128];
 	uint8_t gpio_value;
-	printk(KERN_INFO "Device read\n");
+	printk(KERN_INFO "GPIO LED Driver read\n");
 
     // actual output to user
 	gpio_value = gpio_get_value(H_GPIO_1);
@@ -79,11 +100,14 @@ static ssize_t dev_read(struct file *file, char __user *buf, size_t count, loff_
 	}
 }
 
+/********************************************************************************
+ * Write to the device from CMD
+ ********************************************************************************/
 static ssize_t dev_write(struct file *file, const char __user *buf, size_t count, loff_t *offset)
 {
 	uint8_t data;
 	int ret = copy_from_user(&data, buf, 1);
-	if(ret == 0) pr_info("Write successful!\n");
+	if(ret == 0) pr_info("GPIO LED Driver write success\n");
 	if(data == '1') {
 		// action
 	}
@@ -93,9 +117,12 @@ static ssize_t dev_write(struct file *file, const char __user *buf, size_t count
 	return count;
 }
 
+/********************************************************************************
+ * IO-Control Operations
+ ********************************************************************************/
 static long dev_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 {
-	printk("Device ioctl\n");
+	printk("GPIO LED Driver IOCT accessed\n");
 	switch(cmd) {
 		case CMD_1: {
 			gpio_set_value(H_GPIO_1, arg);
@@ -116,9 +143,15 @@ static long dev_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 	return 0;
 }
 
+/********************************************************************************
+ * Link the init end exit functions
+ ********************************************************************************/
 module_init(dev_init);
 module_exit(dev_exit);
 
+/********************************************************************************
+ * Signing of the Kernel Driver
+ ********************************************************************************/
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Simon Obermeier & Anton Kraus");
 MODULE_DESCRIPTION("LED Matrix Driver");

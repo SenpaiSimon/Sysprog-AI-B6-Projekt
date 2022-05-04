@@ -1,7 +1,9 @@
 #ifndef LED_MATRIX_DRIVERs
 #define LED_MATRIX_DRIVER
 
-// Includes
+/********************************************************************************
+ * Includes from external Librarys
+ ********************************************************************************/
 #include <linux/init.h>
 #include <linux/module.h>
 #include <linux/cdev.h>
@@ -13,24 +15,33 @@
 #include <linux/gpio.h>
 #include <stdbool.h>
 
-// own includes
+/********************************************************************************
+ * Includes from internal Librarys
+ ********************************************************************************/
 #include "gpio_inits/gpio_pins.h"
 #include "gpio_inits/gpio_init.h"
 
-// Defines
+/********************************************************************************
+ * Global Defines
+ ********************************************************************************/
 #define DEVICE_NAME "led_matrix"
 
-// Commands for IOCT
-#define CMD_1 _IOW('a', 'a', int32_t*)
-#define CMD_2 _IOW('a', 'b', int32_t*)
-#define CMD_3 _IOW('a', 'c', int32_t*)
+/********************************************************************************
+ * IOCT Commands
+ ********************************************************************************/
+#define CMD_1 _IOW('a', 'a', int32_t)
+#define CMD_2 _IOW('a', 'b', int32_t)
+#define CMD_3 _IOW('a', 'c', int32_t)
 
-// Structs
+/********************************************************************************
+ * Structs
+ ********************************************************************************/
 static struct class *dev_class = NULL;
 static struct cdev cdev;
-static int dev_major = 0;
 
-// Prototypes
+/********************************************************************************
+ * Function Prototypes
+ ********************************************************************************/
 static int dev_uevent(struct device *dev, struct kobj_uevent_env *env);
 static int __init dev_init(void);
 static void __exit dev_exit(void);
