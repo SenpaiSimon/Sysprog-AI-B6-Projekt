@@ -4,7 +4,6 @@
 /********************************************************************************
  * Includes from external Librarys
  ********************************************************************************/
-#include <stdint.h>
 
 /********************************************************************************
  * Includes from internal Librarys
@@ -37,10 +36,10 @@ static void setPixel(uint8_t row, uint8_t line, uint8_t state) {
 static uint8_t getPixelState(uint8_t row, uint8_t line) {
     if(row > ROWS && row <= 0) {
         printk(KERN_ERR "Row: %d out of range", row);
-        return;
+        return 2;
     } else if (line > LINES && line <= 0) {
         printk(KERN_ERR "Line: %d out of range", line);
-        return;
+        return 2;
     }
 
     return gpio_get_value(hPin_arr[row - 1]) && gpio_get_value(lPin_arr[line - 1]);
