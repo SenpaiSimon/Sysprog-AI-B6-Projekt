@@ -13,9 +13,7 @@ int main(void)
     // TODO
 	int8_t state = 0;
 
-	for(int i = 0; i < 10; i++) {
-		ioctl(fd, CMD_1, state);
-	}
+	ioctl(fd, CMD_1, state);
 
     // close the device after use
 	close(fd);

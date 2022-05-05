@@ -73,7 +73,7 @@ static int dev_open(struct inode *inode, struct file *file)
  ********************************************************************************/
 static int dev_release(struct inode *inode, struct file *file)
 {
-	printk(KERN_INFO "GPIO LED Driver stopped access\n");
+	printk(KERN_INFO "GPIO LED Matrix Driver stopped access\n");
 	return 0;
 }
 
@@ -85,7 +85,7 @@ static ssize_t dev_read(struct file *file, char __user *buf, size_t count, loff_
 	int len;
 	char buffer[128];
 	uint8_t gpio_value;
-	printk(KERN_INFO "GPIO LED Driver read\n");
+	printk(KERN_INFO "GPIO LED Matrix Driver read\n");
 
     // actual output to user
 	gpio_value = gpio_get_value(H_GPIO_1);
@@ -107,7 +107,7 @@ static ssize_t dev_write(struct file *file, const char __user *buf, size_t count
 {
 	uint8_t data;
 	int ret = copy_from_user(&data, buf, 1);
-	if(ret == 0) pr_info("GPIO LED Driver write success\n");
+	if(ret == 0) pr_info("GPIO LED Matrix Driver write success\n");
 	if(data == '1') {
 		// action
 	}
@@ -122,18 +122,18 @@ static ssize_t dev_write(struct file *file, const char __user *buf, size_t count
  ********************************************************************************/
 static long dev_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 {
-	printk("GPIO LED Driver IOCT accessed\n");
+	printk("GPIO LED Matrix Driver IOCT accessed\n");
 	switch(cmd) {
 		case CMD_1: {
-			gpio_set_value(H_GPIO_1, arg);
+
 			break;
 		}
 		case CMD_2: {
-			gpio_set_value(H_GPIO_1, 1);
+			
 			break;
 		}
 		case CMD_3: {
-			gpio_set_value(H_GPIO_1, 0);
+			
 			break;
 		}
 		default:
