@@ -1,10 +1,6 @@
 obj-m += led_matrix_driver.o
-# led_matrix_driver-objs := gpio_inits/gpio_init.o
 KDIR = /lib/modules/$(shell uname -r)/build
 
-# INCLUDES = -I$(src)/gpio_inits
-
-# ccflags-y := $(INCLUDES)
 ccflags-y += -std=gnu99
 
 all: default clean

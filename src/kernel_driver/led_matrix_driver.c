@@ -125,11 +125,11 @@ static long dev_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 	printk("GPIO LED Matrix Driver IOCT accessed\n");
 	switch(cmd) {
 		case CMD_1: {
-
+				setPixel(0, 0, 0);
 			break;
 		}
 		case CMD_2: {
-			
+				uint8_t state = getPixelState(0, 0);
 			break;
 		}
 		case CMD_3: {

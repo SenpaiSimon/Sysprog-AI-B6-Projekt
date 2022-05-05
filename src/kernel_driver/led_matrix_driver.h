@@ -21,6 +21,7 @@
 #include "gpio_inits/gpio_pins.h"
 #include "gpio_inits/gpio_init.h"
 #include "ioct_cmd.h"
+#include "controller/matrix_controller.h"
 
 /********************************************************************************
  * Global Defines

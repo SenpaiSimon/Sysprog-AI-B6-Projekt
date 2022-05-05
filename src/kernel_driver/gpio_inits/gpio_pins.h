@@ -27,4 +27,12 @@
 #define L_GPIO_5 26
 #define L_GPIO_6 27
 
+/********************************************************************************
+ * Pin Arrays
+ ********************************************************************************/
+static int hPin_arr[ROWS] = {H_GPIO_1, H_GPIO_2, H_GPIO_3, H_GPIO_4, H_GPIO_5, H_GPIO_6};
+static char hPin_arr_names[ROWS][10] = {"H_GPIO_1", "H_GPIO_2", "H_GPIO_3", "H_GPIO_4", "H_GPIO_5", "H_GPIO_6"};
+static int lPin_arr[LINES] = {L_GPIO_1, L_GPIO_2, L_GPIO_3, L_GPIO_4, L_GPIO_5, L_GPIO_6};
+static char lPin_arr_names[LINES][10] = {"L_GPIO_1", "L_GPIO_2", "L_GPIO_3", "L_GPIO_4", "L_GPIO_5", "L_GPIO_6"};
+
 #endif
