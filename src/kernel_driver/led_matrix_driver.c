@@ -40,6 +40,13 @@ static int __init dev_init(void) {
 	printk(KERN_INFO "Init GPIO Led Matrix Driver\r\n");
 
     init_all_gpios();
+
+	for(int i = 1; i <= ROWS; i++) {
+		for(int j = 1; j <= LINES; j++) {
+			setPixel(i,j,1);
+			msleep(500);
+		}
+	}
 	return 0;
 }
 
@@ -124,23 +131,20 @@ static long dev_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 {
 	printk("GPIO LED Matrix Driver IOCT accessed\n");
 	switch(cmd) {
-		case CMD_1: {
-			// TODO
-				//setPixel(0, 0, 0);
-			break;
-		}
-		case CMD_2: {
-			// TODO
-				//uint8_t state = getPixelState(0, 0);
-			break;
-		}
-		case CMD_3: {
-			
-			break;
-		}
-		default:
-			pr_err("Unkown command! \n");
-		break;
+		// case SET_PIXEL: {
+		// 	// TODO
+		// 		printk(KERN_INFO "ROW: %d LINE %d STATE %d", (*state)arg.row, (*state)arg.line, (*state)arg.state);
+		// 		//setPixel();
+		// 	break;
+		// }
+		// case READ_PIXEL: {
+		// 	// TODO
+		// 		//arg[2] = getPixelState(arg[0], arg[1]);
+		// 	break;
+		// }
+		// default:
+		// 	pr_err("Unkown command! \n");
+		// break;
 	}
 	return 0;
 }

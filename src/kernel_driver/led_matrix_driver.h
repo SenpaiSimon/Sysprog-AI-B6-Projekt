@@ -14,6 +14,7 @@
 #include <linux/ioctl.h>
 #include <linux/gpio.h>
 #include <stdbool.h>
+#include <linux/delay.h>
 
 /********************************************************************************
  * Includes from internal Librarys

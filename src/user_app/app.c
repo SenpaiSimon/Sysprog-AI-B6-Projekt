@@ -11,9 +11,12 @@ int main(void)
 
     // actions 
     // TODO
-	int8_t state = 0;
+	state set;
+	set.line = 2;
+	set.row = 1;
+	set.state = 1;
 
-	ioctl(fd, CMD_1, state);
+	//ioctl(fd, SET_PIXEL, &set);
 
     // close the device after use
 	close(fd);

@@ -17,7 +17,7 @@
 /********************************************************************************
  * Sets the state of a pixel | 1 = on 0 = off
  ********************************************************************************/
-static void setPixel(uint8_t row, uint8_t line, uint8_t state) {
+static void setPixel(int row, int line, int state) {
     if(row > ROWS && row <= 0) {
         printk(KERN_ERR "Row: %d out of range", row);
         return;

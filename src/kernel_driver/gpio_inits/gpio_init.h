@@ -38,7 +38,7 @@ static void init_all_gpios(void) {
                 printk(KERN_ERR "Err, Pin No %d request failed!\r\n", hPin_arr[i]);
                 return;
             } else {
-                if(gpio_direction_output(hPin_arr[i], 0)) {
+                if(gpio_direction_output(hPin_arr[i], 1)) {
                     printk(KERN_ERR "Err, Pin No %d set direction failed!\r\n", hPin_arr[i]);
                     return;
                 } else {
@@ -61,7 +61,7 @@ static void init_all_gpios(void) {
                 printk(KERN_ERR "Err, Pin No %d request failed!\r\n", lPin_arr[i]);
                 return;;
             } else {
-                if(gpio_direction_output(lPin_arr[i], 1)) {
+                if(gpio_direction_output(lPin_arr[i], 0)) {
                     printk(KERN_ERR "Err, Pin No %d set direction failed!\r\n", lPin_arr[i]);
                     return;
                 } else {
