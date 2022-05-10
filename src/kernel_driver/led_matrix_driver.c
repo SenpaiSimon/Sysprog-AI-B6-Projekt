@@ -43,8 +43,7 @@ static int __init dev_init(void) {
 
 	for(int i = 1; i <= ROWS; i++) {
 		for(int j = 1; j <= LINES; j++) {
-			setPixel(i,j,1);
-			msleep(500);
+			setPixel(i,j,0);
 		}
 	}
 	return 0;

@@ -27,7 +27,7 @@ static void setPixel(int row, int line, int state) {
     }
 
     gpio_set_value(hPin_arr[row - 1], state);
-    gpio_set_value(lPin_arr[line - 1], state);
+    gpio_set_value(lPin_arr[line - 1], !state);
 }
 
 /********************************************************************************

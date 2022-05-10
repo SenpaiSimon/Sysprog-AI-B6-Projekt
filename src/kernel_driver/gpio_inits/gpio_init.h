@@ -14,6 +14,7 @@
  * Includes from internal Librarys
  ********************************************************************************/
 #include "gpio_pins.h"
+#include "../controller/matrix_controller.h"
 
 /********************************************************************************
  * Functions
@@ -73,6 +74,13 @@ static void init_all_gpios(void) {
             }
         }
     }
+
+    // Initally turn off all pixels
+    for(int i = 1; i <= ROWS; i++) {
+        for(int j = 1; j <= LINES; j++) {
+            setPixel(i,j,0);
+        }
+	}
 
     printk(KERN_INFO "Init done");
 }
