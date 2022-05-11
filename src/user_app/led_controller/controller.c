@@ -5,7 +5,7 @@ void setPixel(uint8_t row, uint8_t line, uint8_t state) {
 	int fd = open("/dev/led_matrix", O_RDWR);
 	if(fd < 0) {
 		printf("Cannot open device file\n");
-		return 0;
+		return;
 	}
 
     //IOCT Command here

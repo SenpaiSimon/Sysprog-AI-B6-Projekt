@@ -42,7 +42,7 @@ static int getPixelState(int row, int line) {
         return 2;
     }
 
-    return gpio_get_value(hPin_arr[row - 1]) && gpio_get_value(lPin_arr[line - 1]);
+    return gpio_get_value(hPin_arr[row - 1]) && !gpio_get_value(lPin_arr[line - 1]);
 }   
 
 #endif

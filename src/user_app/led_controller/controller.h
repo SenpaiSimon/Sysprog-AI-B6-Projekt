@@ -8,6 +8,7 @@
 #include <sys/ioctl.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdio.h>
 
 /********************************************************************************
  * Includes from internal Librarys
@@ -17,7 +18,7 @@
 /********************************************************************************
  * Function Prototypes
  ********************************************************************************/
-uint8_t getPixelState(uint8_t row, uint8_t line);
 void setPixel(uint8_t row, uint8_t line, uint8_t state);
+uint8_t getPixelState(uint8_t row, uint8_t line);
 
 #endif
