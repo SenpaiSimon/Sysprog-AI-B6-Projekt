@@ -21,5 +21,8 @@ extern dimensions_t DIMENSIONS;
  * Function Prototypes
  ********************************************************************************/
 void led_set_all(uint8_t state);
+void led_set_line(uint8_t line, uint8_t set);
+void led_set_row(uint8_t row, uint8_t set);
+void led_snake(int speed);
 
 #endif
