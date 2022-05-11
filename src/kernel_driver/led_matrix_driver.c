@@ -37,8 +37,9 @@ static int __init dev_init(void) {
 	cdev.owner = THIS_MODULE;
 	cdev_add(&cdev, MKDEV(dev_major, 0), 1);
 	device_create(dev_class, NULL, MKDEV(dev_major, 0), NULL, DEVICE_NAME);
-	printk(KERN_INFO "Init GPIO Led Matrix Driver\r\n");
+	printk(KERN_INFO "Init GPIO Led Matrix Driver\n");
 
+	//Initialize the GPIOs
     init_all_gpios();
 
 	return 0;
@@ -49,6 +50,7 @@ static int __init dev_init(void) {
  ********************************************************************************/
 static void __exit dev_exit(void)
 {
+	//free up all the GPIOs
     exit_all_gpios();
 
 	// Remove and unregister the device
@@ -56,7 +58,7 @@ static void __exit dev_exit(void)
 	class_unregister(dev_class);
 	class_destroy(dev_class);
 	unregister_chrdev_region(MKDEV(dev_major, 0), MINORMASK);
-	printk(KERN_INFO "Unregister GPIO Led Matrix Driver\r\n");
+	printk(KERN_INFO "Unregister GPIO Led Matrix Driver\n");
 	return;
 }
 
@@ -84,13 +86,31 @@ static int dev_release(struct inode *inode, struct file *file)
 static ssize_t dev_read(struct file *file, char __user *buf, size_t count, loff_t *offset)
 {
 	int len;
-	char buffer[128];
-	uint8_t gpio_value;
+	char buffer[512];
+	char temp[64];
+	int matrixState[ROWS][LINES];
 	printk(KERN_INFO "GPIO LED Matrix Driver read\n");
 
+	// fill up the state array
+	for(int i = 1; i <= ROWS; i++) {
+		for(int j = 1; j <= LINES; j++) {
+			matrixState[i-1][j-1] = getPixelState(i, j);
+		}
+	}
+
+	// generate the output
+	sprintf(buffer, "State of the Matrix Table:\n");
+
+	for(int i = 0; i < LINES; i++) {
+		for(int j = 0; j < ROWS; j++) {
+			sprintf(temp, "| %d ", matrixState[j][i]);
+			strcat(buffer, temp);
+		}
+		strcat(buffer, "|\n");
+	}
+	len = strlen(buffer);
+
     // actual output to user
-	gpio_value = gpio_get_value(H_GPIO_1);
-	len = snprintf(buffer, sizeof(buffer), "GPIO_4: %d\n", gpio_value);
 	if(copy_to_user(buf, buffer, len) > 0) 
 		pr_err("dev_read(): ERROR\n");
 	if(*offset == 0) {
@@ -107,13 +127,12 @@ static ssize_t dev_read(struct file *file, char __user *buf, size_t count, loff_
 static ssize_t dev_write(struct file *file, const char __user *buf, size_t count, loff_t *offset)
 {
 	uint8_t data;
-	int ret = copy_from_user(&data, buf, 1);
+	int ret = copy_from_user(&data, buf, sizeof(data));
 	if(ret == 0) pr_info("GPIO LED Matrix Driver write success\n");
-	if(data == '1') {
-		// action
-	}
-	if(data == '0') {
-		// action
+	for(int i = 1; i <= ROWS; i++) {
+        for(int j = 1; j <= LINES; j++) {
+            setPixel(i,j,data);
+        }
 	}
 	return count;
 }
@@ -121,24 +140,40 @@ static ssize_t dev_write(struct file *file, const char __user *buf, size_t count
 /********************************************************************************
  * IO-Control Operations
  ********************************************************************************/
-static long dev_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
-{
-	printk("GPIO LED Matrix Driver IOCT accessed\n");
+static long dev_ioctl(struct file *file, unsigned int cmd, unsigned long arg) {
+	printk(KERN_INFO "GPIO LED Matrix Driver IOCT accessed\n");
 	switch(cmd) {
-		// case SET_PIXEL: {
-		// 	// TODO
-		// 		printk(KERN_INFO "ROW: %d LINE %d STATE %d", (*state)arg.row, (*state)arg.line, (*state)arg.state);
-		// 		//setPixel();
-		// 	break;
-		// }
-		// case READ_PIXEL: {
-		// 	// TODO
-		// 		//arg[2] = getPixelState(arg[0], arg[1]);
-		// 	break;
-		// }
-		// default:
-		// 	pr_err("Unkown command! \n");
-		// break;
+		case SET_PIXEL: {
+			state_t input;
+			if(copy_from_user(&input, (state_t*)arg, sizeof(input)) > 0) {
+				printk(KERN_ERR "Set Pixel Error! \n");
+			}
+			setPixel(input.row, input.line, input.state);
+			break;
+		}
+		case READ_PIXEL: {
+			state_t input;
+			if(copy_from_user(&input, (state_t*)arg, sizeof(input)) > 0) {
+				printk(KERN_ERR "Get Pixel Error! \n");
+			}
+			input.state = getPixelState(input.row, input.line);
+			if(copy_to_user((state_t*)arg, &input, sizeof(input)) > 0) {
+				printk(KERN_ERR "Get Pixel Error! \n");
+			}
+			break;
+		}
+		case GET_DIMS: {
+			dimensions_t output;
+			output.lines = LINES;
+			output.rows = ROWS;
+			if(copy_to_user((dimensions_t*)arg, &output, sizeof(output)) > 0) {
+				printk(KERN_ERR "Get Dimensions Error! \n");
+			}
+			break;
+		}
+		default:
+			printk(KERN_ERR "Unknown Command! \n");
+		break;
 	}
 	return 0;
 }

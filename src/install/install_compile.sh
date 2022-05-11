@@ -22,7 +22,7 @@ echo "" >> ../install/log.txt
 
 echo "Compiling User app"
 cd ../user_app
-gcc app.c -o app >> ../install/log.txt
+gcc app.c functions/functions.c led_controller/controller.c -o app >> ../install/log.txt
 
 echo "Starting user App"
 ./app

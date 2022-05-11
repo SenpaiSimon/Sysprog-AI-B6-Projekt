@@ -1,20 +1,20 @@
-#ifndef __APP_H__
-#define __APP_H__
+#ifndef __FUNCTIONS__
+#define __FUNCTIONS__
 
 /********************************************************************************
  * Includes from external Librarys
  ********************************************************************************/
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <sys/ioctl.h>
+#include <stdint.h>
 
 /********************************************************************************
  * Includes from internal Librarys
  ********************************************************************************/
-#include "../kernel_driver/ioct_cmd.h"
-#include "led_controller/controller.h"
-#include "./functions/functions.h"
+#include "../led_controller/controller.h"
+#include "../../kernel_driver/gpio_inits/gpio_pins.h"
+
+/********************************************************************************
+ * Function Prototypes
+ ********************************************************************************/
+void led_toggle_all(uint8_t state);
 
 #endif

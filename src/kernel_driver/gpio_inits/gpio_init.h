@@ -32,19 +32,19 @@ static void init_all_gpios(void) {
     // Active HIGH Drivers
     for(int i = 0; i < ROWS; i++) {
         if(!gpio_is_valid(hPin_arr[i])) {
-            printk(KERN_ERR "Err, Pin No %d not valid!\r\n", hPin_arr[i]);
+            printk(KERN_ERR "Err, Pin No %d not valid!\n", hPin_arr[i]);
             return;
         } else {
             if(gpio_request(hPin_arr[i], hPin_arr_names[i])) {
-                printk(KERN_ERR "Err, Pin No %d request failed!\r\n", hPin_arr[i]);
+                printk(KERN_ERR "Err, Pin No %d request failed!\n", hPin_arr[i]);
                 return;
             } else {
                 if(gpio_direction_output(hPin_arr[i], 1)) {
-                    printk(KERN_ERR "Err, Pin No %d set direction failed!\r\n", hPin_arr[i]);
+                    printk(KERN_ERR "Err, Pin No %d set direction failed!\n", hPin_arr[i]);
                     return;
                 } else {
                     if(gpio_export(hPin_arr[i], false)) {
-                        printk(KERN_ERR "Err, Pin No %d export failed!\r\n", hPin_arr[i]);
+                        printk(KERN_ERR "Err, Pin No %d export failed!\n", hPin_arr[i]);
                         return;
                     }
                 }
@@ -55,19 +55,19 @@ static void init_all_gpios(void) {
     // Active LOW Driver
     for(int i = 0; i < LINES; i++) {
         if(!gpio_is_valid(lPin_arr[i])) {
-            printk(KERN_ERR "Err, Pin No %d not valid!\r\n", lPin_arr[i]);
+            printk(KERN_ERR "Err, Pin No %d not valid!\n", lPin_arr[i]);
             return;
         } else {
             if(gpio_request(lPin_arr[i], lPin_arr_names[i])) {
-                printk(KERN_ERR "Err, Pin No %d request failed!\r\n", lPin_arr[i]);
+                printk(KERN_ERR "Err, Pin No %d request failed!\n", lPin_arr[i]);
                 return;;
             } else {
                 if(gpio_direction_output(lPin_arr[i], 0)) {
-                    printk(KERN_ERR "Err, Pin No %d set direction failed!\r\n", lPin_arr[i]);
+                    printk(KERN_ERR "Err, Pin No %d set direction failed!\n", lPin_arr[i]);
                     return;
                 } else {
                     if(gpio_export(lPin_arr[i], false)) {
-                        printk(KERN_ERR "Err, Pin No %d export failed!\r\n", lPin_arr[i]);
+                        printk(KERN_ERR "Err, Pin No %d export failed!\n", lPin_arr[i]);
                         return;
                     }
                 }
@@ -82,7 +82,7 @@ static void init_all_gpios(void) {
         }
 	}
 
-    printk(KERN_INFO "Init done");
+    printk(KERN_INFO "Init done\n");
 }
 
 /********************************************************************************

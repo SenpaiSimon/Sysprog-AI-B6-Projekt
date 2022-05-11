@@ -32,7 +32,7 @@
 #define L_GPIO_8 27
 
 /********************************************************************************
- * Pin Arrays
+ * Pin Arrays for easier and quicker access
  ********************************************************************************/
 static int hPin_arr[ROWS] = {H_GPIO_1, H_GPIO_2, H_GPIO_3, H_GPIO_4, H_GPIO_5, H_GPIO_6, H_GPIO_7, H_GPIO_8};
 static char hPin_arr_names[ROWS][10] = {"H_GPIO_1", "H_GPIO_2", "H_GPIO_3", "H_GPIO_4", "H_GPIO_5", "H_GPIO_6", "H_GPIO_7", "H_GPIO_8"};

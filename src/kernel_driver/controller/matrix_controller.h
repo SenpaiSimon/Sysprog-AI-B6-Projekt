@@ -33,12 +33,12 @@ static void setPixel(int row, int line, int state) {
 /********************************************************************************
  * Returns the state of a pixel | 1 = on 0 = off
  ********************************************************************************/
-static uint8_t getPixelState(uint8_t row, uint8_t line) {
+static int getPixelState(int row, int line) {
     if(row > ROWS && row <= 0) {
-        printk(KERN_ERR "Row: %d out of range", row);
+        printk(KERN_ERR "Row: %d out of range\n", row);
         return 2;
     } else if (line > LINES && line <= 0) {
-        printk(KERN_ERR "Line: %d out of range", line);
+        printk(KERN_ERR "Line: %d out of range\n", line);
         return 2;
     }
 

@@ -1,20 +1,23 @@
-#ifndef __APP_H__
-#define __APP_H__
+#ifndef __CONTROLLER__
+#define __CONTROLLER__
 
 /********************************************************************************
  * Includes from external Librarys
  ********************************************************************************/
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdint.h>
+#include <sys/ioctl.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <sys/ioctl.h>
 
 /********************************************************************************
  * Includes from internal Librarys
  ********************************************************************************/
-#include "../kernel_driver/ioct_cmd.h"
-#include "led_controller/controller.h"
-#include "./functions/functions.h"
+#include "../../kernel_driver/ioct_cmd.h"
+
+/********************************************************************************
+ * Function Prototypes
+ ********************************************************************************/
+uint8_t getPixelState(uint8_t row, uint8_t line);
+void setPixel(uint8_t row, uint8_t line, uint8_t state);
 
 #endif
