@@ -86,7 +86,7 @@ static int dev_release(struct inode *inode, struct file *file)
 static ssize_t dev_read(struct file *file, char __user *buf, size_t count, loff_t *offset)
 {
 	int len;
-	char buffer[512];
+	char buffer[650];
 	char temp[64];
 	int matrixState[ROWS][LINES];
 	printk(KERN_INFO "GPIO LED Matrix Driver read\n");
@@ -107,8 +107,17 @@ static ssize_t dev_read(struct file *file, char __user *buf, size_t count, loff_
 			strcat(buffer, temp);
 		}
 		strcat(buffer, "|\n");
+
+		// generate a one line gap excluding the last line
+		if(i != LINES - 1) {
+			for(int k = 0; k < ROWS; k++) {
+				strcat(buffer, "|   ");
+			}
+			strcat(buffer, "|\n");
+		}
+		
 	}
-	
+
 	len = strlen(buffer);
 
     // actual output to user
