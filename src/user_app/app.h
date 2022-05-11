@@ -9,12 +9,13 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
+#include <unistd.h>
 
 /********************************************************************************
  * Includes from internal Librarys
  ********************************************************************************/
 #include "../kernel_driver/ioct_cmd.h"
-#include "led_controller/controller.h"
+#include "./led_controller/controller.h"
 #include "./functions/functions.h"
 
 #endif

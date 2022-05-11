@@ -1,7 +1,11 @@
 #include "app.h"
 
+dimensions_t DIMENSIONS;
+
 int main(void)
 {
-    led_toggle_all(1);
+    // get the dimensions for use in functions.c
+    DIMENSIONS = getDims();
+    
 	return EXIT_SUCCESS;
 }
