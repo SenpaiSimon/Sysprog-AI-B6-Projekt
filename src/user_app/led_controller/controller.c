@@ -18,7 +18,7 @@ dimensions_t getDims() {
 
     // Pass the data
     ioctl(fd, GET_DIMS, &dims);
-
+    
     return dims;
 }
 
@@ -67,4 +67,16 @@ uint8_t getPixelState(uint8_t row, uint8_t line) {
 	close(fd);
 
     return input.state;
+}
+
+/********************************************************************************
+ * Reads the current device state
+ ********************************************************************************/
+void readDeviceState(char *buf) {
+    int fd = open("/dev/led_matrix", O_RDWR);
+	if(fd < 0) {
+        sprintf(buf, "Cannot open device file\n");
+	} else {
+        read(fd, buf, sizeof(buf));
+    }
 }

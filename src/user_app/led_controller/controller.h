@@ -21,5 +21,6 @@
 dimensions_t getDims();
 int setPixel(uint8_t row, uint8_t line, uint8_t state);
 uint8_t getPixelState(uint8_t row, uint8_t line);
+void readDeviceState(char *buf);
 
 #endif

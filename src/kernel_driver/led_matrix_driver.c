@@ -138,7 +138,10 @@ static ssize_t dev_write(struct file *file, const char __user *buf, size_t count
 {
 	uint8_t data;
 	int ret = copy_from_user(&data, buf, sizeof(data));
-	if(ret == 0) pr_info("GPIO LED Matrix Driver write success\n");
+	// convert char input to a integer
+	data -= '0';
+	if(ret == 0) pr_info("GPIO LED Matrix Driver write success with input: %d\n", data);
+
 	for(int i = 1; i <= ROWS; i++) {
         for(int j = 1; j <= LINES; j++) {
             setPixel(i,j,data);

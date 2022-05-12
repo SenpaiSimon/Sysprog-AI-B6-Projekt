@@ -7,6 +7,7 @@ int main(void)
     // get the dimensions for use in functions.c
     DIMENSIONS = getDims();
 
+    char buf[600];
     int running = 1;
     while(running) {
         printf("Select an Action from the Table below to perform:\r\n\r\n");
@@ -15,6 +16,7 @@ int main(void)
         printf("3: Set a single ROW [row][state]\n\r");
         printf("4: Set a single LINE [line][state]\n\r");
         printf("5: Snake [delay]\n\r");
+        printf("8: Print out current state\n\r");
         printf("9: Exit App and Toggle off\n\r");
 
         switch(readNumber("Select")) {
@@ -43,6 +45,12 @@ int main(void)
                 led_snake(readNumber("Delay"));
             break;
 
+            case 8: 
+                readDeviceState(buf);
+                printf("%s", buf);
+                printf("\r\n");
+            break;
+
             case 9:
                 printf("See you next time!\r\n");
                 led_set_all(0);
@@ -57,13 +65,18 @@ int main(void)
 	return EXIT_SUCCESS;
 }
 
+/********************************************************************************
+ * Reads a number from the user with a prompt
+ ********************************************************************************/
 int readNumber(char *input) {
     int userInput;
     char flushInput[10];
 
+    // prompt the user for input
     printf("%s: ", input);
     scanf("%i", &userInput);
     scanf("%c", flushInput);
+    // clear the terminal
     printf("\033[2J");
     
     return userInput;
