@@ -1,3 +1,3 @@
 (fp_lib_table
-  (lib (name "pi_hat_footprint")(type "KiCad")(uri "C:/Users/distr/Documents/GitHub/LED_Matrix_Pi_Hat/lib/pi_hat_footprint.pretty")(options "")(descr ""))
+  (lib (name "pi_hat_footprint")(type "KiCad")(uri "${KIPRJMOD}/lib/pi_hat_footprint.pretty")(options "")(descr ""))
 )

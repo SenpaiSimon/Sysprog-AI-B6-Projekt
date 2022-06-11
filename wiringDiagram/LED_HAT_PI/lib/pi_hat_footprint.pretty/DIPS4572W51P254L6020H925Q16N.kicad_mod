@@ -39,4 +39,9 @@
   (pad "14" thru_hole oval (at 17.5 5.08) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) (tstamp 4a7a87a3-c3fe-448a-a1e8-8e721ddc9f70))
   (pad "15" thru_hole oval (at 17.5 2.54) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) (tstamp b626734b-a059-4d1e-bccd-887e5fdeab35))
   (pad "16" thru_hole oval (at 17.5 0) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) (tstamp 571399c7-53c5-4ad8-9e48-6facbcde591b))
+  (model "${KIPRJMOD}/lib/LED Matrix 3mm 8x8.step"
+    (offset (xyz 9 -9 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz -90 0 0))
+  )
 )
