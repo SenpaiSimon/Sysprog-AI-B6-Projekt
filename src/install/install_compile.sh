@@ -3,6 +3,8 @@
 rm -rf ./logs/log.txt
 
 # Kernel Module Installation and Log
+mkdir logs
+touch logs/log.txt
 echo "Starting compilation of the Kernel Module and installing it..."
 echo "Kernel Install Log" >> ./logs/log.txt
 echo "" >> ./logs/log.txt
