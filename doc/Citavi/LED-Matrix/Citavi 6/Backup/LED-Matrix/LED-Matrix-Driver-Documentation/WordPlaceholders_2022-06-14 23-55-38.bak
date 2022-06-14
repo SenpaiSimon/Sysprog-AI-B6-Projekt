@@ -1,0 +1,239 @@
+﻿{
+  "date": "2022-06-14 23-55-38",
+  "data": [
+    {
+      "$id": "1",
+      "$type": "SwissAcademic.Citavi.Citations.WordPlaceholder, SwissAcademic.Citavi",
+      "Entries": [
+        {
+          "$id": "2",
+          "$type": "SwissAcademic.Citavi.Citations.WordPlaceholderEntry, SwissAcademic.Citavi",
+          "AssociateWithKnowledgeItemId": "331624fc-4b3a-477f-b350-e6acae8ac2f3",
+          "Id": "5eac678b-34b8-487a-a508-9808a1a44c24",
+          "RangeLength": 24,
+          "ReferenceId": "11ae6a41-cec3-40de-88b7-a2abbb57384d",
+          "QuotationType": 1,
+          "UseNumberingTypeOfParentDocument": false
+        }
+      ],
+      "FormattedText": {
+        "$id": "3",
+        "Count": 1,
+        "TextUnits": [
+          {
+            "$id": "4",
+            "FontStyle": {
+              "$id": "5",
+              "Neutral": true
+            },
+            "ReadingOrder": 1,
+            "Text": "(ComputerWeekly.de 2022)"
+          }
+        ]
+      },
+      "Tag": "CitaviPlaceholder#1cbc4aca-d2a3-465d-a4a2-eaf3d7f18209",
+      "Text": "(ComputerWeekly.de 2022)",
+      "WAIVersion": "6.12.0.0"
+    },
+    {
+      "$id": "1",
+      "$type": "SwissAcademic.Citavi.Citations.WordPlaceholder, SwissAcademic.Citavi",
+      "Entries": [
+        {
+          "$id": "2",
+          "$type": "SwissAcademic.Citavi.Citations.WordPlaceholderEntry, SwissAcademic.Citavi",
+          "AssociateWithKnowledgeItemId": "de2c1a9c-96a6-49e4-b22c-b8eff735bfed",
+          "Id": "d934ef98-905b-4f1d-af2c-7fa2d682d391",
+          "RangeLength": 24,
+          "ReferenceId": "11ae6a41-cec3-40de-88b7-a2abbb57384d",
+          "QuotationType": 1,
+          "UseNumberingTypeOfParentDocument": false
+        }
+      ],
+      "FormattedText": {
+        "$id": "3",
+        "Count": 1,
+        "TextUnits": [
+          {
+            "$id": "4",
+            "FontStyle": {
+              "$id": "5",
+              "Neutral": true
+            },
+            "ReadingOrder": 1,
+            "Text": "(ComputerWeekly.de 2022)"
+          }
+        ]
+      },
+      "Tag": "CitaviPlaceholder#c924f5ce-d780-4612-9e54-d80999f87a33",
+      "Text": "(ComputerWeekly.de 2022)",
+      "WAIVersion": "6.12.0.0"
+    },
+    {
+      "$id": "1",
+      "$type": "SwissAcademic.Citavi.Citations.WordPlaceholder, SwissAcademic.Citavi",
+      "Entries": [
+        {
+          "$id": "2",
+          "$type": "SwissAcademic.Citavi.Citations.WordPlaceholderEntry, SwissAcademic.Citavi",
+          "Id": "44aea025-5a3e-4fce-8d0c-5865fb933313",
+          "RangeLength": 12,
+          "ReferenceId": "55447a41-2098-4c26-be24-3472cfc81e3d",
+          "UseNumberingTypeOfParentDocument": false
+        }
+      ],
+      "FormattedText": {
+        "$id": "3",
+        "Count": 1,
+        "TextUnits": [
+          {
+            "$id": "4",
+            "FontStyle": {
+              "$id": "5",
+              "Neutral": true
+            },
+            "ReadingOrder": 1,
+            "Text": "(Ewald 2020)"
+          }
+        ]
+      },
+      "Tag": "CitaviPlaceholder#32c83d09-33c4-418b-a3cf-3eb6a9d63a83",
+      "Text": "(Ewald 2020)",
+      "WAIVersion": "6.12.0.0"
+    },
+    {
+      "$id": "1",
+      "$type": "SwissAcademic.Citavi.Citations.WordPlaceholder, SwissAcademic.Citavi",
+      "Entries": [
+        {
+          "$id": "2",
+          "$type": "SwissAcademic.Citavi.Citations.WordPlaceholderEntry, SwissAcademic.Citavi",
+          "Id": "63a925ff-5d83-4e08-b4af-22925f1fd247",
+          "RangeLength": 43,
+          "ReferenceId": "ccb00c74-f68d-471e-8630-b5d12987f3dd",
+          "UseNumberingTypeOfParentDocument": false
+        }
+      ],
+      "FormattedText": {
+        "$id": "3",
+        "Count": 1,
+        "TextUnits": [
+          {
+            "$id": "4",
+            "FontStyle": {
+              "$id": "5",
+              "Neutral": true
+            },
+            "ReadingOrder": 1,
+            "Text": "(Kernelmodule › Wiki › ubuntuusers.de 2022)"
+          }
+        ]
+      },
+      "Tag": "CitaviPlaceholder#2ac8e8a4-a0a9-40a9-9f7b-0715a01f9921",
+      "Text": "(Kernelmodule › Wiki › ubuntuusers.de 2022)",
+      "WAIVersion": "6.12.0.0"
+    },
+    {
+      "$id": "1",
+      "$type": "SwissAcademic.Citavi.Citations.WordPlaceholder, SwissAcademic.Citavi",
+      "Entries": [
+        {
+          "$id": "2",
+          "$type": "SwissAcademic.Citavi.Citations.WordPlaceholderEntry, SwissAcademic.Citavi",
+          "AssociateWithKnowledgeItemId": "4e6f9f34-8db2-4c4f-9acc-39a877830935",
+          "Id": "cc9664c1-2537-4cc8-9086-2091050c4a72",
+          "RangeLength": 53,
+          "ReferenceId": "f23fcce6-5fe4-47ea-aa3a-00cfbe2c3ad8",
+          "QuotationType": 2,
+          "UseNumberingTypeOfParentDocument": false
+        }
+      ],
+      "FormattedText": {
+        "$id": "3",
+        "Count": 1,
+        "TextUnits": [
+          {
+            "$id": "4",
+            "FontStyle": {
+              "$id": "5",
+              "Neutral": true
+            },
+            "ReadingOrder": 1,
+            "Text": "(Was ist ein Kernel? – Definition im IT-Lexikon 2022)"
+          }
+        ]
+      },
+      "Tag": "CitaviPlaceholder#40f5fef9-b56f-4a17-8a7b-d6c1c8b90012",
+      "Text": "(Was ist ein Kernel? – Definition im IT-Lexikon 2022)",
+      "WAIVersion": "6.12.0.0"
+    },
+    {
+      "$id": "1",
+      "$type": "SwissAcademic.Citavi.Citations.WordPlaceholder, SwissAcademic.Citavi",
+      "Entries": [
+        {
+          "$id": "2",
+          "$type": "SwissAcademic.Citavi.Citations.WordPlaceholderEntry, SwissAcademic.Citavi",
+          "AssociateWithKnowledgeItemId": "6e37b82e-a990-4c6a-b4be-0875a61af3c3",
+          "Id": "6f5434a2-7251-40cd-a23c-f34a1caf90da",
+          "RangeLength": 26,
+          "ReferenceId": "f757d024-eb3d-40f6-80ba-08b13691ecbd",
+          "QuotationType": 3,
+          "UseNumberingTypeOfParentDocument": false
+        }
+      ],
+      "FormattedText": {
+        "$id": "3",
+        "Count": 1,
+        "TextUnits": [
+          {
+            "$id": "4",
+            "FontStyle": {
+              "$id": "5",
+              "Neutral": true
+            },
+            "ReadingOrder": 1,
+            "Text": "(Open Source For You 2011)"
+          }
+        ]
+      },
+      "Tag": "CitaviPlaceholder#67ed142f-bd06-4974-ba4b-cfffdb46c2e7",
+      "Text": "(Open Source For You 2011)",
+      "WAIVersion": "6.12.0.0"
+    },
+    {
+      "$id": "1",
+      "$type": "SwissAcademic.Citavi.Citations.WordPlaceholder, SwissAcademic.Citavi",
+      "Entries": [
+        {
+          "$id": "2",
+          "$type": "SwissAcademic.Citavi.Citations.WordPlaceholderEntry, SwissAcademic.Citavi",
+          "AssociateWithKnowledgeItemId": "acf76365-4d52-4c40-ad05-9c5d10f63076",
+          "Id": "ef2bbef0-bb7b-47f8-a0f3-07396667856e",
+          "RangeLength": 13,
+          "ReferenceId": "30b5fff0-c7fd-4233-a7b9-e10f155b31bc",
+          "QuotationType": 2,
+          "UseNumberingTypeOfParentDocument": false
+        }
+      ],
+      "FormattedText": {
+        "$id": "3",
+        "Count": 1,
+        "TextUnits": [
+          {
+            "$id": "4",
+            "FontStyle": {
+              "$id": "5",
+              "Neutral": true
+            },
+            "ReadingOrder": 1,
+            "Text": "(Becker 2007)"
+          }
+        ]
+      },
+      "Tag": "CitaviPlaceholder#6bdeeb6f-0c41-4c37-b2e2-faaf1c6133c0",
+      "Text": "(Becker 2007)",
+      "WAIVersion": "6.12.0.0"
+    }
+  ]
+}
