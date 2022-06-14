@@ -115,7 +115,6 @@ static ssize_t dev_read(struct file *file, char __user *buf, size_t count, loff_
 			}
 			strcat(buffer, "|\n");
 		}
-		
 	}
 
 	len = strlen(buffer);
