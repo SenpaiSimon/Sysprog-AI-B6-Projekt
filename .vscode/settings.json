@@ -1,0 +1,16 @@
+{
+    "C_Cpp.errorSquiggles": "Enabled",
+    "files.associations": {
+        "led_matrix_driver.h": "c",
+        "init.h": "c",
+        "module.h": "c",
+        "fs.h": "c",
+        "kernel.h": "c",
+        "compiler.h": "c",
+        "ioctl.h": "c",
+        "gpio.h": "c",
+        "stdbool.h": "c",
+        "gpio_init.h": "c",
+        "compiler_types.h": "c"
+    }
+}
