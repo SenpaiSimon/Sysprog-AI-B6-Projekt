@@ -9,6 +9,7 @@
  * Includes from internal Librarys
  ********************************************************************************/
 #include "../gpio_inits/gpio_init.h"
+#include "../ioct_cmd.h"
 
 /********************************************************************************
  * Functions
@@ -43,6 +44,24 @@ static int getPixelState(int row, int line) {
     }
 
     return gpio_get_value(hPin_arr[row - 1]) && !gpio_get_value(lPin_arr[line - 1]);
-}   
+}  
+
+/********************************************************************************
+ * Draw all pixels which are set in the given array
+ ********************************************************************************/
+static void drawAllPixels(int drawMatrix[ROWS][LINES]) {
+    // draw everything
+    for(int i = 0; i < ROWS; i++) {
+		for(int j = 0; j < LINES; j++) {
+            // toggle whole lines
+			setPixel(i + 1, j + 1, drawMatrix[i][j]);
+			// setPixel(i + 1, j + 1, 1);
+		}
+        for(int j = 0; j < LINES; j++) {
+            // toggle whole lines
+			setPixel(i + 1, j + 1, 0);
+		}
+	}
+}
 
 #endif

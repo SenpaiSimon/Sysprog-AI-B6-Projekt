@@ -11,6 +11,8 @@
         "gpio.h": "c",
         "stdbool.h": "c",
         "gpio_init.h": "c",
-        "compiler_types.h": "c"
+        "compiler_types.h": "c",
+        "cdev.h": "c",
+        "device.h": "c"
     }
 }

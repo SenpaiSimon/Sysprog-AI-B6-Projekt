@@ -42,6 +42,10 @@ static int __init dev_init(void) {
 	//Initialize the GPIOs
     init_all_gpios();
 
+	//Initialize Timer
+	timer_setup(&drawTimer, timer_callback, 0);
+	mod_timer(&drawTimer, jiffies + usecs_to_jiffies(INTERVAL));
+
 	return 0;
 }
 
@@ -50,6 +54,9 @@ static int __init dev_init(void) {
  ********************************************************************************/
 static void __exit dev_exit(void)
 {
+	// remove the timer
+	del_timer(&drawTimer);
+
 	//free up all the GPIOs
     exit_all_gpios();
 
@@ -88,15 +95,7 @@ static ssize_t dev_read(struct file *file, char __user *buf, size_t count, loff_
 	int len;
 	char buffer[650];
 	char temp[64];
-	int matrixState[ROWS][LINES];
 	printk(KERN_INFO "GPIO LED Matrix Driver read\n");
-
-	// fill up the state array
-	for(int i = 1; i <= ROWS; i++) {
-		for(int j = 1; j <= LINES; j++) {
-			matrixState[i-1][j-1] = getPixelState(i, j);
-		}
-	}
 
 	// generate the output
 	sprintf(buffer, "State of the Matrix Table:\n");
@@ -141,9 +140,9 @@ static ssize_t dev_write(struct file *file, const char __user *buf, size_t count
 	data -= '0';
 	if(ret == 0) pr_info("GPIO LED Matrix Driver write success with input: %d\n", data);
 
-	for(int i = 1; i <= ROWS; i++) {
-        for(int j = 1; j <= LINES; j++) {
-            setPixel(i,j,data);
+	for(int i = 0; i < ROWS; i++) {
+        for(int j = 0; j < LINES; j++) {
+            matrixState[i][j] = data;
         }
 	}
 	return count;
@@ -160,7 +159,7 @@ static long dev_ioctl(struct file *file, unsigned int cmd, unsigned long arg) {
 			if(copy_from_user(&input, (state_t*)arg, sizeof(input)) > 0) {
 				printk(KERN_ERR "Set Pixel Error! \n");
 			}
-			setPixel(input.row, input.line, input.state);
+			matrixState[input.row - 1][input.line - 1] = input.state;
 			break;
 		}
 		case READ_PIXEL: {
@@ -168,7 +167,7 @@ static long dev_ioctl(struct file *file, unsigned int cmd, unsigned long arg) {
 			if(copy_from_user(&input, (state_t*)arg, sizeof(input)) > 0) {
 				printk(KERN_ERR "Get Pixel Error! \n");
 			}
-			input.state = getPixelState(input.row, input.line);
+			input.state = matrixState[input.row - 1][input.line - 1];
 			if(copy_to_user((state_t*)arg, &input, sizeof(input)) > 0) {
 				printk(KERN_ERR "Get Pixel Error! \n");
 			}
@@ -188,6 +187,16 @@ static long dev_ioctl(struct file *file, unsigned int cmd, unsigned long arg) {
 		break;
 	}
 	return 0;
+}
+
+/********************************************************************************
+ * Timer callback for drawing all pixels
+ ********************************************************************************/
+void timer_callback(struct timer_list *data) {
+	pr_info("CALLBACK");
+	mod_timer(&drawTimer, jiffies + usecs_to_jiffies(INTERVAL));
+	drawAllPixels(matrixState);
+	pr_info("CALLBACK DONE");
 }
 
 /********************************************************************************

@@ -15,6 +15,9 @@
 #include <linux/gpio.h>
 #include <stdbool.h>
 #include <linux/delay.h>
+#include <linux/kdev_t.h>
+#include <linux/timer.h>
+#include <linux/jiffies.h>
 
 /********************************************************************************
  * Includes from internal Librarys
@@ -28,12 +31,14 @@
  * Global Defines
  ********************************************************************************/
 #define DEVICE_NAME "led_matrix"
+#define INTERVAL 1
 
 /********************************************************************************
  * Structs
  ********************************************************************************/
 static struct class *dev_class = NULL;
 static struct cdev cdev;
+static struct timer_list drawTimer;
 
 /********************************************************************************
  * Function Prototypes
@@ -46,5 +51,6 @@ static int dev_release(struct inode *inode, struct file *file);
 static ssize_t dev_read(struct file *file, char __user *buf, size_t count, loff_t *offset);
 static ssize_t dev_write(struct file *file, const char __user *buf, size_t count, loff_t *offset);
 static long dev_ioctl(struct file *file, unsigned int cmd, unsigned long arg);
+void timer_callback(struct timer_list *data);
 
 #endif
