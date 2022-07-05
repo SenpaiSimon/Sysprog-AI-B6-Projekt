@@ -1,0 +1,346 @@
+make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-pc-mingw32
+
+# �Make�-Datenbank; erstellt am: Tue Jul 05 15:07:59 2022
+
+# Variablen
+
+# automatisch
+<D = $(patsubst %/,%,$(dir $<))
+# automatisch
+?F = $(notdir $?)
+# Umgebung
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# Makefile
+MAKEFLAGS = Rrqp
+# Umgebung
+LC_CTYPE = de_DE.UTF-8
+# Umgebung
+VSCODE_LOG_NATIVE = false
+# automatisch
+?D = $(patsubst %/,%,$(dir $?))
+# automatisch
+@D = $(patsubst %/,%,$(dir $@))
+# Umgebung
+HOMEDRIVE = C:
+# automatisch
+@F = $(notdir $@)
+# automatisch
+^D = $(patsubst %/,%,$(dir $^))
+# Makefile
+CURDIR := c:/GIT/Sysprog-AI-B6-Projekt
+# Makefile
+SHELL = C:/Program Files/Git/usr/bin/sh.exe
+# Umgebung
+CONFIG_SITE = C:/Program Files/Git/etc/config.site
+# Umgebung
+WINDIR = C:\WINDOWS
+# Umgebung
+VSCODE_NLS_CONFIG = {"locale":"de","availableLanguages":{"*":"de"},"_languagePackId":"b61d3f473b0358bc955527db7340fd23.de","_translationsConfigFile":"C:\\Users\\cosmo\\AppData\\Roaming\\Code\\clp\\b61d3f473b0358bc955527db7340fd23.de\\tcf.json","_cacheRoot":"C:\\Users\\cosmo\\AppData\\Roaming\\Code\\clp\\b61d3f473b0358bc955527db7340fd23.de","_resolvedLanguagePackCoreLocation":"C:\\Users\\cosmo\\AppData\\Roaming\\Code\\clp\\b61d3f473b0358bc955527db7340fd23.de\\30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"C:\\Users\\cosmo\\AppData\\Roaming\\Code\\clp\\b61d3f473b0358bc955527db7340fd23.de\\corrupted.info","_languagePackSupport":true}
+# Umgebung
+VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
+# Umgebung
+ONEDRIVE = C:\Users\cosmo\OneDrive
+# Umgebung
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+# Makefile
+MAKEFILE_LIST := 
+# Umgebung
+FPS_BROWSER_USER_PROFILE_STRING = Default
+# Umgebung
+TMP = C:\Users\cosmo\AppData\Local\Temp
+# Umgebung
+VSCODE_VERBOSE_LOGGING = true
+# Umgebung
+PROGRAMW6432 = C:\Program Files
+# Umgebung
+INFOPATH = C:\Program Files\Git\usr\local\info;C:\Program Files\Git\usr\share\info;C:\Program Files\Git\usr\info;C:\Program Files\Git\share\info
+# Umgebung
+PROGRAMDATA = C:\ProgramData
+# Umgebung
+MSYSTEM_CHOST = x86_64-w64-mingw32
+# Umgebung
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-073f362e-f514-49e6-a1da-f58cdf67f2fc-sock
+# Umgebung
+VSCODE_CWD = C:\GIT\Sysprog-AI-B6-Projekt
+# Umgebung
+SE_LICENSE_SERVER = C:\Program Files\Siemens\Solid Edge 2021\Preferences\SELicense.lic
+# Umgebung
+PATH = C:\Users\cosmo\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\cosmo\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\PuTTY;C:\MinGW\bin;C:\Program Files\dotnet;C:\Program Files (x86)\dotnet;C:\Program Files\nodejs;C:\apache-maven-3.8.5\bin;C:\Program Files\Java\jdk-18.0.1.1\bin;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Program Files (x86)\GnuWin32\bin;C:\Users\cosmo\AppData\Local\Microsoft\WindowsApps;C:\Users\cosmo\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\cosmo\AppData\Local\GitHubDesktop\bin;C:\Users\cosmo\.dotnet\tools;C:\Users\cosmo\AppData\Roaming\npm;C:\Users\cosmo\AppData\Local\Programs\MiKTeX\miktex\bin\x64;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+# Umgebung
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+# Umgebung
+TERM_PROGRAM_VERSION = 3.5.2
+# Umgebung
+_ = C:/Users/cosmo/AppData/Local/Programs/Microsoft VS Code/Code.exe
+# Umgebung
+PROCESSOR_ARCHITECTURE = x86
+# Umgebung
+USERPROFILE = C:\Users\cosmo
+# Umgebung
+MSYSTEM_CARCH = x86_64
+# Umgebung
+EXEPATH = C:\Program Files\Git
+# Umgebung
+ALLUSERSPROFILE = C:\ProgramData
+# Umgebung
+PLINK_PROTOCOL = ssh
+# Umgebung
+MSYSTEM_PREFIX = C:/Program Files/Git/mingw64
+# Umgebung
+VSCODE_LOG_STACK = false
+# Umgebung
+NUMBER_OF_PROCESSORS = 8
+# Umgebung
+ELECTRON_RUN_AS_NODE = 1
+# Umgebung
+ORIGINAL_TEMP = C:/Users/cosmo/AppData/Local/Temp
+# Standard
+.FEATURES := target-specific order-only second-expansion else-if archives
+# automatisch
+%F = $(notdir $%)
+# Umgebung
+DISPLAY = needs-to-be-defined
+# Umgebung
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_16160_LLMVTYSGJQAZZKOP
+# Umgebung
+VSCODE_PIPE_LOGGING = true
+# Umgebung
+ORIGINAL_PATH = C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\cosmo\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\PuTTY;C:\MinGW\bin;C:\Program Files\dotnet;C:\Program Files (x86)\dotnet;C:\Program Files\nodejs;C:\apache-maven-3.8.5\bin;C:\Program Files\Java\jdk-18.0.1.1\bin;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Program Files (x86)\GnuWin32\bin;C:\Users\cosmo\AppData\Local\Microsoft\WindowsApps;C:\Users\cosmo\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\cosmo\AppData\Local\GitHubDesktop\bin;C:\Users\cosmo\.dotnet\tools;C:\Users\cosmo\AppData\Roaming\npm;C:\Users\cosmo\AppData\Local\Programs\MiKTeX\miktex\bin\x64
+# Umgebung
+COMPUTERNAME = SIMONCONVERTIB
+# Umgebung
+PWD = C:/GIT/Sysprog-AI-B6-Projekt
+# Umgebung
+PROGRAMFILES = C:\Program Files (x86)
+# Umgebung
+DRIVERDATA = C:\Windows\System32\Drivers\DriverData
+# automatisch
+*D = $(patsubst %/,%,$(dir $*))
+# Umgebung
+PKG_CONFIG_PATH = C:\Program Files\Git\mingw64\lib\pkgconfig;C:\Program Files\Git\mingw64\share\pkgconfig
+# Umgebung
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# Umgebung
+USERNAME = cosmo
+# Umgebung
+PUBLIC = C:\Users\Public
+# Umgebung
+MANPATH = C:\Program Files\Git\mingw64\local\man;C:\Program Files\Git\mingw64\share\man;C:\Program Files\Git\usr\local\man;C:\Program Files\Git\usr\share\man;C:\Program Files\Git\usr\man;C:\Program Files\Git\share\man
+# Umgebung
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# Umgebung
+HOME = C:\Users\cosmo
+# Umgebung
+VSCODE_CLI = 1
+# Umgebung
+VSCODE_CODE_CACHE_PATH = C:\Users\cosmo\AppData\Roaming\Code\CachedData\30d9c6cd9483b2cc586687151bcbcd635f373630
+# Umgebung
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# Umgebung
+COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+# Umgebung
+LOGONSERVER = \\SIMONCONVERTIB
+# Umgebung
+ONEDRIVECONSUMER = C:\Users\cosmo\OneDrive
+# Umgebung
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# Umgebung
+USERDOMAIN = SIMONCONVERTIB
+# Umgebung
+HOSTNAME = SimonConvertib
+# Umgebung
+SSH_ASKPASS = C:/Program Files/Git/mingw64/bin/git-askpass.exe
+# Standard
+MAKE = $(MAKE_COMMAND)
+# Standard
+MAKECMDGOALS := all
+# Umgebung
+SHLVL = 2
+# Umgebung
+ACLOCAL_PATH = C:\Program Files\Git\mingw64\share\aclocal;C:\Program Files\Git\usr\share\aclocal
+# Umgebung
+JAVA_HOME = C:\Program Files\Java\jdk-18.0.1.1
+# Standard
+MAKE_VERSION := 3.81
+# Umgebung
+MINGW_CHOST = x86_64-w64-mingw32
+# Makefile
+.DEFAULT_GOAL := 
+# Umgebung
+PROGRAMFILES(X86) = C:\Program Files (x86)
+# automatisch
+%D = $(patsubst %/,%,$(dir $%))
+# Umgebung
+LOCALAPPDATA = C:\Users\cosmo\AppData\Local
+# Umgebung
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+# Standard
+MAKE_COMMAND := make.exe
+# Umgebung
+PROCESSOR_ARCHITEW6432 = AMD64
+# Umgebung
+OLDPWD = C:/GIT
+# Umgebung
+TERM_PROGRAM = mintty
+# Standard
+.VARIABLES := 
+# Umgebung
+TMPDIR = C:\Users\cosmo\AppData\Local\Temp
+# automatisch
+*F = $(notdir $*)
+# Umgebung
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 142 Stepping 10, GenuineIntel
+# Umgebung
+OS = Windows_NT
+# Umgebung
+VSCODE_IPC_HOOK = \\.\pipe\aa78da6d14cf437e81bdadd9304f56b8-1.68.1-main-sock
+# Umgebung
+HOMEPATH = \Users\cosmo
+# Umgebung
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+# Umgebung
+PROMPT = $P$G
+# Umgebung
+MFLAGS = -Rrqp
+# Umgebung
+GIT = C:\GIT
+# Umgebung
+ORIGINAL_TMP = C:/Users/cosmo/AppData/Local/Temp
+# Umgebung
+SYSTEMROOT = C:\WINDOWS
+# automatisch
++D = $(patsubst %/,%,$(dir $+))
+# Umgebung
+MINGW_PREFIX = C:/Program Files/Git/mingw64
+# automatisch
++F = $(notdir $+)
+# Umgebung
+APPDATA = C:\Users\cosmo\AppData\Roaming
+# Umgebung
+TEMP = C:\Users\cosmo\AppData\Local\Temp
+# Umgebung
+COMSPEC = C:\WINDOWS\system32\cmd.exe
+# Umgebung
+MSYSTEM = MINGW64
+# Standard
+MAKEFILES := 
+# automatisch
+<F = $(notdir $<)
+# Umgebung
+LC_ALL = C
+# automatisch
+^F = $(notdir $^)
+# Standard
+SUFFIXES := 
+# Umgebung
+SYSTEMDRIVE = C:
+# Umgebung
+SESSIONNAME = Console
+# Umgebung
+PROCESSOR_REVISION = 8e0a
+# Umgebung
+MAKELEVEL := 0
+# Umgebung
+LANG = C
+# Umgebung
+PROCESSOR_LEVEL = 6
+# Umgebung
+TERM = xterm
+# Umgebung
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
+# Umgebung
+VSCODE_PID = 16160
+# Umgebung
+MINGW_PACKAGE_PREFIX = mingw-w64-x86_64
+# Umgebung
+USERDOMAIN_ROAMINGPROFILE = SIMONCONVERTIB
+# variable set hash-table stats:
+# Load=125/1024=12%, Rehash=0, Collisions=13/142=9%
+
+# Pattern-specific Variable Values
+
+# Keine musterspezifischen Variablenwerte.
+
+# Verzeichnisse
+
+# . (Schl�ssel (key) c:/GIT/Sysprog-AI-B6-Projekt,  letzte �nderung (mtime) 1657022402): 9 Dateien, keine Unm�glichkeiten.
+# C:\Program Files\Git\mingw64\bin (Schl�ssel (key) C:/Program Files/Git/mingw64/bin,  letzte �nderung (mtime) 1649076913): 109 Dateien, keine Unm�glichkeiten.
+# C:\Program Files\Git\usr\bin (Schl�ssel (key) C:/Program Files/Git/usr/bin,  letzte �nderung (mtime) 1649076913): 316 Dateien, keine Unm�glichkeiten bisher.
+# C:\Program Files\Git\usr\local\bin: Konnte den Status nicht feststellen.
+# C:\Users\cosmo\bin: Konnte den Status nicht feststellen.
+
+# 434 Dateien, keine Unm�glichkeiten in 5 Verzeichnissen.
+
+# Implicit Rules
+
+# Keine impliziten Regeln vorhanden.
+
+# Dateien
+
+# Dies ist kein Ziel:
+all:
+#  Kommandozeilen-Ziel (target).
+#  Suche nach impliziten Regeln wurde durchgef�hrt.
+#  Die Datei existiert nicht.
+#  Datei wurde nicht aktualisiert.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Dies ist kein Ziel:
+.DEFAULT:
+#  Suche nach impliziten Regeln wurde nicht durchgef�hrt.
+#  Zeit der letzten �nderung wurde nicht �berpr�ft.
+#  Datei wurde nicht aktualisiert.
+
+# Dies ist kein Ziel:
+makefile:
+#  A default, MAKEFILES, or -include/sinclude makefile.
+#  Suche nach impliziten Regeln wurde durchgef�hrt.
+#  Die Datei existiert nicht.
+#  Datei wurde aktualisiert.
+#  Aktualisierung fehlgeschlagen.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Dies ist kein Ziel:
+.SUFFIXES:
+#  Suche nach impliziten Regeln wurde nicht durchgef�hrt.
+#  Zeit der letzten �nderung wurde nicht �berpr�ft.
+#  Datei wurde nicht aktualisiert.
+
+# Dies ist kein Ziel:
+GNUmakefile:
+#  A default, MAKEFILES, or -include/sinclude makefile.
+#  Suche nach impliziten Regeln wurde durchgef�hrt.
+#  Die Datei existiert nicht.
+#  Datei wurde aktualisiert.
+#  A 
+make.exe: *** Keine Regel, um �all� zu erstellen.  Schluss.
+
+ktualisierung fehlgeschlagen.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# files hash-table stats:
+# Load=5/1024=0%, Rehash=0, Collisions=0/16=0%
+# VPATH-Suchpfade
+
+# Keine �vpath�-Suchpfade.
+
+# Kein allgemeiner Suchpfad (Variable �VPATH�).
+
+# # of strings in strcache: 0
+# # of strcache buffers: 0
+# strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
+# strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
+
+# �Make�-Datenbank; beendet am: Tue Jul 05 15:07:59 2022
+
+ 
