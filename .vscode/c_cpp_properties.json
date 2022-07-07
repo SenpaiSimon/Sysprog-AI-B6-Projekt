@@ -1,0 +1,34 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "defines": [
+                "__KERNEL__",
+                "THIS_MODULE",
+                "MODULE_LICENSE",
+                "MODULE_AUTHOR",
+                "MODULE_DESCRIPTION",
+                "MODULE_VERSION",
+                "KBUILD_MODNAME"
+            ],
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/include/",
+                "/usr/local/include/",
+                "/usr/src/linux-headers-5.15.32+/include/",
+                "/usr/src/linux-headers-5.15.32-v7+/include/",
+                "/usr/src/linux-headers-5.15.32-v7l+/include/",
+                "/usr/lib/gcc/arm-linux-gnueabihf/10/include/",
+                "/usr/src/linux-headers-5.15.32-v7l+/include/",
+                "/lib/modules/5.15.32-v7l+/build/arch/arm/include/",
+                "/lib/modules/5.15.32-v7l+/build/arch/arm/include/generated/"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c99",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "gcc-x64",
+            "configurationProvider": "ms-vscode.makefile-tools"
+        }
+    ],
+    "version": 4
+}
