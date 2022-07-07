@@ -25,7 +25,7 @@ void led_set_row(uint8_t row, uint8_t set) {
  ********************************************************************************/
 void led_set_line(uint8_t line, uint8_t set) {
     for(int i = 1; i <= DIMENSIONS.lines; i++) {
-        setPixel(line, i, set);
+        setPixel(i, line, set);
     }
 }
 
